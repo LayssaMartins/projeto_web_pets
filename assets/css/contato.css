@@ -1,0 +1,56 @@
+/* ======================= */
+/* 🌸 ESTILO EXCLUSIVO CONTATO.PHP */
+/* ======================= */
+
+.contato .titulo {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.contato .titulo h1 {
+  font-size: 2rem;
+  color: #ff6b81;
+  margin-bottom: 0.5rem;
+}
+
+.contato .titulo p {
+  font-size: 1.1rem;
+}
+
+.form-contato {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-contato label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-contato input,
+.form-contato textarea,
+.form-contato select {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.btn-enviar {
+  background-color: #ff6b81;
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 25px;
+}
+
+.btn-enviar:hover {
+  background-color: #ffb84d;
+}
