@@ -1,0 +1,60 @@
+/* ======================= */
+/* 🌸 ESTILO EXCLUSIVO ADOTE.PHP */
+/* ======================= */
+
+.adote .titulo {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.adote .titulo h1 {
+  font-size: 2rem;
+  color: #ff6b81;
+  margin-bottom: 0.5rem;
+}
+
+.adote .titulo p {
+  font-size: 1.1rem;
+}
+
+.animais-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.animal-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.animal-card img {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.animal-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-adotar {
+  margin-top: 1rem;
+  background-color: #ffb84d;
+  border: none;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border-radius: 25px;
+}
+
+.btn-adotar:hover {
+  background-color: #ff6b81;
+}

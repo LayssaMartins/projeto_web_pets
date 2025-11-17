@@ -1,0 +1,30 @@
+/* ======================= */
+/* 🌸 ESTILO EXCLUSIVO SOBRE.PHP */
+/* ======================= */
+
+/* Seções internas */
+.sobre .intro,
+.sobre .missao,
+.sobre .abrangencia {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.sobre h1 {
+  font-size: 2rem;
+  color: #ff6b81;
+  margin-bottom: 1rem;
+}
+
+.sobre h2 {
+  font-size: 1.5rem;
+  color: #ffb84d;
+  margin-bottom: 0.5rem;
+}
+
+.sobre p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom:1.5rem;
+}
