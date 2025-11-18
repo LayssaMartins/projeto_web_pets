@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -47,6 +48,10 @@
 <body>
 
 <?php include('../includes/menu.php'); ?>
+=======
+<?php include('../includes/menu.php'); ?>
+<link rel="stylesheet" href="../assets/css/style.css">
+>>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
 
 <main class="home">
   <section class="hero">
@@ -62,16 +67,25 @@
       <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
       <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
       <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
+<<<<<<< HEAD
       <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peuludo 4"></div>
+=======
+      <div class="carousel-item"><img src="../assets/img/peuludo4.png" alt="Peuludo 4"></div>
+>>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
       <!-- duplicando para loop infinito -->
       <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
       <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
       <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
+<<<<<<< HEAD
       <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peuludo 4"></div>
+=======
+      <div class="carousel-item"><img src="../assets/img/peuludo4.png" alt="Peuludo 4"></div>
+>>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
     </div>
   </div>
 </section>
 
+<<<<<<< HEAD
 <!-- fim carrossel / hero -->
 
 <section class="py-12" id="acoes">
@@ -314,3 +328,7 @@
 </body>
 </html>
 
+=======
+</main>
+<?php include('../includes/rodape.php'); ?>
+>>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
