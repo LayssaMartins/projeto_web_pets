@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-<header>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.php">🐾 Peludos <span>Unipê</span></a>
-    </div>
-    <ul class="menu">
-      <li><a href="index.php">Início</a></li>
-      <li><a href="index.php#sobre">Sobre</a></li>
-      <li><a href="index.php#adocao">Adote</a></li>
-      <li><a href="index.php#acoes">Doe e Ajude</a></li>
-      <li><a href="index.php#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
-=======
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,15 +12,17 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.php">🐾 Peludos <span>Unipê</span></a>
+        <a href="#topo">🐾 Peludos <span>Unipê</span></a>
       </div>
+
       <ul class="menu">
-        <li><a href="index.php">Início</a></li>
-        <li><a href="sobre.php">Sobre</a></li>
-        <li><a href="adote.php">Adote</a></li>
-        <li><a href="doe-e-ajude.php">Doe e Ajude</a></li>
-        <li><a href="contato.php">Contato</a></li>
+        <li><a href="#home">Início</a></li>
+         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#acoes">Ajude</a></li>
+        <li><a href="#adocao">Adotar</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
->>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
+</body>
+</html>

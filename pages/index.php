@@ -1,94 +1,90 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Peludos Unipê</title>
 
-    <!-- seu CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- TAILWIND -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-    <!-- Tailwind (mantive conforme você usou) -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- TEU CSS (vem depois!) -->
+<link rel="stylesheet" href="../assets/css/style.css">
 
-    <!-- fontes -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
-    <!-- sua configuração tailwind (mantive igual) -->
+    <!-- Config Tailwind -->
     <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#FF7D63", // Laranja Primário
-                        "background-light": "#FFF8F0", // Fundo Claro
-                        "background-dark": "#0B4F6C", // Fundo Escuro (Navy)
-                        "text-light": "#0B4F6C", // Texto Claro (Navy)
-                        "text-dark": "#FFF8F0", // Texto Escuro (Bege)
-                        "accent": "#A8DADC" // Cor de Destaque (Ciano)
+                        primary: "#FF7D63",
+                        background-light: "#FFF8F0",
+                        background-dark: "#0B4F6C",
+                        text-light: "#0B4F6C",
+                        text-dark: "#FFF8F0",
+                        accent: "#A8DADC"
                     },
                     fontFamily: {
-                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                        display: ["Plus Jakarta Sans", "sans-serif"]
                     },
                     borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "1rem",
-                        "xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                },
-            },
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px"
+                    }
+                }
+            }
         }
     </script>
 </head>
+
 <body>
 
 <?php include('../includes/menu.php'); ?>
-=======
-<?php include('../includes/menu.php'); ?>
-<link rel="stylesheet" href="../assets/css/style.css">
->>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
 
 <main class="home">
-  <section class="hero">
-    <h1>Adote Amor, Adote um Peludo 🐶🐱</h1>
-    <p>Transforme a vida de um animal abandonado e receba amor incondicional em troca. <br>No <strong>Peludos Unipê</strong>, cada adoção é uma oportunidade de fazer o mundo mais feliz para nossos amigos de quatro patas. 🏡💛</p>
-    <a href="sobre.php" class="btn">Quero Saber mais</a>
-  </section>
 
-<section class="">
-  <h2>Conheça Alguns Animais:</h2>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
-      <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
-      <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
-<<<<<<< HEAD
-      <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peuludo 4"></div>
-=======
-      <div class="carousel-item"><img src="../assets/img/peuludo4.png" alt="Peuludo 4"></div>
->>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
-      <!-- duplicando para loop infinito -->
-      <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
-      <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
-      <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
-<<<<<<< HEAD
-      <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peuludo 4"></div>
-=======
-      <div class="carousel-item"><img src="../assets/img/peuludo4.png" alt="Peuludo 4"></div>
->>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
-    </div>
-  </div>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Adote Amor, Adote um Peludo 🐶🐱</h1>
+        <p>
+            Transforme a vida de um animal abandonado e receba amor incondicional em troca. <br>
+            No <strong>Peludos Unipê</strong>, cada adoção é uma oportunidade de fazer o mundo mais feliz para nossos amigos de quatro patas. 🏡💛
+        </p>
+        <a href="sobre.php" class="btn">Quero Saber mais</a>
+    </section>
 
-<<<<<<< HEAD
-<!-- fim carrossel / hero -->
+    <!-- CARROSSEL -->
+    <section>
+        <h2>Conheça Alguns Animais:</h2>
 
-<section class="py-12" id="acoes">
+        <div class="carousel">
+            <div class="carousel-track">
+
+                <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
+                <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
+                <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
+                <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peludo 4"></div>
+
+                <!-- Duplicação para loop -->
+                <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
+                <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
+                <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
+                <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peludo 4"></div>
+
+            </div>
+        </div>
+    </section>
+
+ <section class="py-12" id="acoes">
     <div class="grid md:grid-cols-3 gap-6">
         
         <!-- DOAÇÃO -->
@@ -115,34 +111,24 @@
             </a>
         </div>
 
-        <!-- ADOÇÃO -->
+
+   <!-- VOLUNTARIADO -->
         <div class="p-6 bg-white dark:bg-text-light/10 shadow-lg rounded-xl border border-primary/10 dark:border-accent/10 transition-shadow duration-300 hover:shadow-xl">
-            <span class="material-symbols-outlined text-4xl text-primary mb-3">favorite</span>
-            <h3 class="text-xl font-bold mb-2">Quero Adotar!</h3>
-            <p class="text-sm mb-4 opacity-80">
-                Veja os perfis dos nossos gatos que estão esperando por um lar amoroso.
-            </p>
-            <a href="#adocao" class="block text-center px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-opacity duration-200">
-                Ver Peludos
+        <span class="material-symbols-outlined text-4xl text-primary mb-3">volunteer_activism</span>
+    
+        <h3 class="text-xl font-bold mb-2">Quero Ser Voluntário!</h3>
+    
+        <p class="text-sm mb-4 opacity-80">
+        Ajude a cuidar, divulgar e apoiar nossos peludos! Seja parte dessa rede de amor e transforme vidas.
+        </p>
+    
+   <a href="voluntario.php" class="block text-center px-4 py-2 bg-accent text-text-light rounded-lg font-semibold hover:opacity-80 transition-opacity duration-200">
+                Participar
             </a>
         </div>
-
     </div>
+
 </section>
-
-
-<!-- 
-<section class="py-12 md:py-20" id="sobre">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-text-light dark:text-text-dark">
-            Sobre o Peludos Unipê 🐶🐱
-        </h2>
-        <p class="text-lg opacity-90 mb-6">
-            O <strong>Peludos Unipê</strong> nasceu dentro do <strong>Centro Universitário de João Pessoa</strong> como uma iniciativa de amor e empatia. 
-            Inspirado pelo perfil do Instagram <em>@peludosunipe</em>, o projeto foi trazido para o ambiente web com o objetivo de ampliar o alcance das adoções e conectar ainda mais pessoas à causa animal.
-        </p>
-    </div>
--->
 
 <section class="py-12 md:py-20" id="sobre">
 
@@ -180,8 +166,7 @@
 
     </div>
 
-</section>
-
+    <!-- ADOÇÃO -->
     <div class="mt-12 bg-primary/10 p-8 rounded-xl">
         <h3 class="text-2xl font-bold mb-8 text-center text-primary">Como Funciona a Adoção?</h3>
         <div class="grid md:grid-cols-3 gap-8">
@@ -287,48 +272,53 @@
 
     </div>
 </section>
-
-
-<section class="py-12 md:py-20" id="contato">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-text-light dark:text-text-dark">Fale Conosco</h2>
-        <p class="text-lg opacity-90">Tem alguma dúvida ou quer saber mais sobre nosso trabalho? Mande uma mensagem</p>
-    </div>
-
-    <form class="max-w-xl mx-auto p-8 bg-white dark:bg-text-light/10 rounded-xl shadow-lg border border-primary/10 dark:border-accent/10">
-        <div class="space-y-4">
-            <div>
-                <label class="sr-only" for="name">Nome</label>
-                <input class="w-full px-4 py-2 border border-gray-300 dark:border-text-dark/20 rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50" id="name" name="name" placeholder="Nome" type="text" autocomplete="name"/>
-            </div>
-            <div>
-                <label class="sr-only" for="email">Email</label>
-                <input class="w-full px-4 py-2 border border-gray-300 dark:border-text-dark/20 rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50" id="email" name="email" placeholder="Email" type="email" autocomplete="email"/>
-            </div>
-            <div>
-                <label class="sr-only" for="subject">Assunto</label>
-                <input class="w-full px-4 py-2 border border-gray-300 dark:border-text-dark/20 rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50" id="subject" name="subject" placeholder="Assunto" type="text"/>
-            </div>
-            <div>
-                <label class="sr-only" for="message">Mensagem</label>
-                <textarea class="w-full px-4 py-2 border border-gray-300 dark:border-text-dark/20 rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50" id="message" name="message" placeholder="Mensagem" rows="4"></textarea>
-            </div>
-            <div>
-                <button class="w-full py-3 bg-primary text-white rounded-lg font-bold hover:bg-opacity-90 transition-opacity duration-200" type="submit">Enviar Mensagem</button>
-            </div>
+    <!-- CONTATO -->
+    <section class="py-12 md:py-20" id="contato">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-text-light dark:text-text-dark">
+                Fale Conosco
+            </h2>
+            <p class="text-lg opacity-90">
+                Tem alguma dúvida ou quer saber mais sobre nosso trabalho? Mande uma mensagem.
+            </p>
         </div>
-    </form>
-</section>
+
+        <form class="max-w-xl mx-auto p-8 bg-white dark:bg-text-light/10 rounded-xl shadow-lg border border-primary/10 dark:border-accent/10">
+            <div class="space-y-4">
+
+                <div>
+                    <input id="name" name="name" type="text" placeholder="Nome"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50"/>
+                </div>
+
+                <div>
+                    <input id="email" name="email" type="email" placeholder="Email"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50"/>
+                </div>
+
+                <div>
+                    <input id="subject" name="subject" type="text" placeholder="Assunto"
+                           class="w-full px-4 py-2 border rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50"/>
+                </div>
+
+                <div>
+                    <textarea id="message" name="message" rows="4" placeholder="Mensagem"
+                              class="w-full px-4 py-2 border rounded-lg focus:ring-primary focus:border-primary dark:bg-background-dark/50"></textarea>
+                </div>
+
+                <button type="submit"
+                        class="w-full py-3 bg-primary text-white rounded-lg font-bold hover:bg-opacity-90">
+                    Enviar Mensagem
+                </button>
+
+            </div>
+        </form>
+    </section>
 
 </main>
 
 <script src="../assets/js/patinhas.js"></script>
-
 <?php include('../includes/rodape.php'); ?>
+
 </body>
 </html>
-
-=======
-</main>
-<?php include('../includes/rodape.php'); ?>
->>>>>>> 05c2b8bc49961876f98a02030c5d6cbbd707acfd
