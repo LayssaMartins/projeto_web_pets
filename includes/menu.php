@@ -12,14 +12,17 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.php">🐾 Peludos <span>Unipê</span></a>
+        <a href="#topo">🐾 Peludos <span>Unipê</span></a>
       </div>
+
       <ul class="menu">
-        <li><a href="index.php">Início</a></li>
-        <li><a href="sobre.php">Sobre</a></li>
-        <li><a href="adote.php">Adote</a></li>
-        <li><a href="doe-e-ajude.php">Doe e Ajude</a></li>
-        <li><a href="contato.php">Contato</a></li>
+        <li><a href="#home">Início</a></li>
+         <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#acoes">Ajude</a></li>
+        <li><a href="#adocao">Adotar</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
   </header>
+</body>
+</html>
