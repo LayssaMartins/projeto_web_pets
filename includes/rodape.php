@@ -17,7 +17,7 @@
             <div>
                 <h3 class="font-bold mb-3">Navegação</h3>
                 <ul class="space-y-2 text-sm opacity-80">
-                    <li><a href="#home" class="hover:text-primary">Início</a></li>
+                    <li><a href="#topo" class="hover:text-primary">Início</a></li>
                     <li><a href="#sobre" class="hover:text-primary">Sobre</a></li>
                     <li><a href="#acoes" class="hover:text-primary">Ajude</a></li>
                     <li><a href="#adocao" class="hover:text-primary">Adotar</a></li>
@@ -29,9 +29,10 @@
             <div>
                 <h3 class="font-bold mb-3">Ajude</h3>
                 <ul class="space-y-2 text-sm opacity-80">
-                    <li><a href="/pages/doacao.php" class="hover:text-primary">Doar</a></li>
-                    <li><a href="/pages/apadrinhar.php" class="hover:text-primary">Apadrinhar</a></li>
-                    <li><a href="/pages/voluntario.php" class="hover:text-primary">Ser Voluntário</a></li>
+                <li><a href="../pages/doacao.php" class="hover:text-primary">Doar</a></li>
+                <li><a href="../pages/apadrinhar.php" class="hover:text-primary">Apadrinhar</a></li>
+                <li><a href="../pages/voluntario.php" class="hover:text-primary">Ser Voluntário</a></li>
+
 
                 </ul>
             </div>

@@ -9,20 +9,20 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="#topo">🐾 Peludos <span>Unipê</span></a>
-      </div>
+ <header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#topo">🐾 Peludos <span>Unipê</span></a>
+    </div>
 
-      <ul class="menu">
-        <li><a href="#home">Início</a></li>
-         <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#acoes">Ajude</a></li>
-        <li><a href="#adocao">Adotar</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul class="menu">
+      <li><a href="#topo">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#acoes">Ajude</a></li>
+      <li><a href="#adocao">Adotar</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 </body>
 </html>

@@ -35,3 +35,17 @@ for (let i = 0; i < numPatinhas; i++) {
   patinha.style.left = `${Math.random() * 90}vw`;
   document.body.appendChild(patinha);
 }
+
+
+document.querySelectorAll('.carousel-animal').forEach(carousel => {
+    const items = carousel.querySelectorAll('.carousel-item');
+    let current = 0;
+
+    setInterval(() => {
+        items[current].classList.remove('opacity-100');
+        items[current].classList.add('opacity-0');
+        current = (current + 1) % items.length;
+        items[current].classList.remove('opacity-0');
+        items[current].classList.add('opacity-100');
+    }, 3000); // muda a cada 3s
+});
