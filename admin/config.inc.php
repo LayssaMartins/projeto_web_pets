@@ -1,5 +1,5 @@
 <?php
-// Conexão com o banco
+// config.inc.php
 $host = 'localhost';
 $db   = 'adocao';
 $user = 'root';
@@ -12,4 +12,3 @@ try {
 } catch (PDOException $e) {
     die("Erro ao conectar: " . $e->getMessage());
 }
-?>

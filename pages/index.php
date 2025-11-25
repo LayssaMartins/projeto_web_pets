@@ -229,84 +229,113 @@ include '../admin/config.inc.php'; // Conexão com o banco
     </div>
 </section>
     <!-- ADOÇÃO -->
-    <section class="py-12 md:py-20" id="adocao">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-text-light dark:text-text-dark">
-                Nossos Peludos Esperando um Lar
-            </h2>
-        </div>
+   <section class="py-12 md:py-20" id="adocao">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-text-light dark:text-text-dark">
+            Nossos Peludos Esperando um Lar
+        </h2>
+    </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <?php 
-            $stmt = $pdo->query("SELECT * FROM adocao ORDER BY nome");
-            $peludos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-            foreach($peludos as $peludo): 
-                $stmtFotos = $pdo->prepare("SELECT caminho_foto FROM adocao_fotos WHERE id_animal = ?");
-                $stmtFotos->execute([$peludo['id']]);
-                $fotos = $stmtFotos->fetchAll(PDO::FETCH_ASSOC);
+        <?php 
+        // Buscar todos os peludos
+        $stmt = $pdo->query("SELECT * FROM adocao ORDER BY nome");
+        $peludos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                if(empty($peludo['imagem'])) {
-                    $fotos = [['caminho_foto' => '../assets/img/default.png']];
-                } else {
-                    array_unshift($fotos, ['caminho_foto' => $peludo['imagem']]);
+        foreach($peludos as $peludo): 
+
+            // Buscar fotos adicionais
+            $stmtFotos = $pdo->prepare("SELECT caminho_foto FROM adocao_fotos WHERE id_animal = ?");
+            $stmtFotos->execute([$peludo['id']]);
+            $fotos = $stmtFotos->fetchAll(PDO::FETCH_ASSOC);
+
+            // Se não houver imagem principal e nem fotos adicionais → usa default
+            if(empty($peludo['imagem']) && empty($fotos)) {
+                $fotos = [['caminho_foto' => '../assets/img/default.png']];
+            } else {
+
+                // Se tiver imagem principal → coloca ela como primeira
+                if(!empty($peludo['imagem'])) {
+                    array_unshift($fotos, ['caminho_foto' => '../' . $peludo['imagem']]);
                 }
-            ?>
-            <div class="rounded-xl overflow-hidden shadow-md bg-white">
-                <div class="carousel-animal relative w-full h-64 sm:h-72 md:h-80 lg:h-80 overflow-hidden flex items-center justify-center bg-gray-100">
-                    <?php foreach($fotos as $index => $foto): ?>
-                        <img src="<?= $foto['caminho_foto'] ?>" 
-                             class="carousel-item absolute w-full h-full object-cover transition-opacity <?= $index === 0 ? 'opacity-100' : 'opacity-0' ?>">
-                    <?php endforeach; ?>
 
-                    <button class="prev absolute left-2 top-1/2 -translate-y-1/2 bg-[#7CBFD6] hover:bg-[#2F6C86] 
-                            text-white px-2 py-1 rounded-full shadow-lg z-10">&lt;</button>
-                    <button class="next absolute right-2 top-1/2 -translate-y-1/2 bg-[#7CBFD6] hover:bg-[#2F6C86] 
-                            text-white px-2 py-1 rounded-full shadow-lg z-10">&gt;</button>
-                </div>
+                // Ajusta fotos adicionais para terem "../"
+                foreach($fotos as $i => $f) {
+                    if(strpos($f['caminho_foto'], '../') !== 0) {
+                        $fotos[$i]['caminho_foto'] = '../' . $f['caminho_foto'];
+                    }
+                }
+            }
+        ?>
 
-                <div class="p-4">
-                    <h3 class="text-lg font-bold mb-1"><?= htmlspecialchars($peludo['nome']) ?></h3>
-                    <p class="text-sm opacity-70 mb-3"><?= htmlspecialchars($peludo['sexo']) ?>, <?= htmlspecialchars($peludo['idade']) ?></p>
-                    <a href="animal-detalhe.php?id=<?= $peludo['id'] ?>">
-                        <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-                                style="background-color: #7CBFD6;"
-                                onmouseover="this.style.backgroundColor='#2F6C86'"
-                                onmouseout="this.style.backgroundColor='#7CBFD6'">
-                            Ver Perfil
-                        </button>
-                    </a>
-                </div>
+        <div class="rounded-xl overflow-hidden shadow-md bg-white">
+
+            <!-- Carrossel -->
+            <div class="carousel-animal relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-100">
+
+                <?php foreach($fotos as $index => $foto): ?>
+                    <img src="<?= $foto['caminho_foto'] ?>"
+                         class="carousel-item absolute w-full h-full object-cover object-center transition-opacity 
+
+                         <?= $index === 0 ? 'opacity-100' : 'opacity-0' ?>">
+                <?php endforeach; ?>
+
+                <button class="prev absolute left-2 top-1/2 -translate-y-1/2 bg-[#7CBFD6] hover:bg-[#2F6C86] 
+                        text-white px-2 py-1 rounded-full shadow-lg z-10">&lt;</button>
+
+                <button class="next absolute right-2 top-1/2 -translate-y-1/2 bg-[#7CBFD6] hover:bg-[#2F6C86] 
+                        text-white px-2 py-1 rounded-full shadow-lg z-10">&gt;</button>
+
             </div>
-            <?php endforeach; ?>
+
+            <!-- Infos -->
+            <div class="p-4">
+                <h3 class="text-lg font-bold mb-1"><?= htmlspecialchars($peludo['nome']) ?></h3>
+                <p class="text-sm opacity-70 mb-3"><?= htmlspecialchars($peludo['sexo']) ?>, <?= htmlspecialchars($peludo['idade']) ?></p>
+
+                <a href="animal-detalhe.php?id=<?= $peludo['id'] ?>">
+                    <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
+                            style="background-color: #7CBFD6;"
+                            onmouseover="this.style.backgroundColor='#2F6C86'"
+                            onmouseout="this.style.backgroundColor='#7CBFD6'">
+                        Ver Perfil
+                    </button>
+                </a>
+            </div>
         </div>
-    </section>
 
-    <!-- SCRIPT CARROSSEL -->
-    <script>
-    document.querySelectorAll('.carousel-animal').forEach(carousel => {
-        const items = carousel.querySelectorAll('.carousel-item');
-        let current = 0;
-        const prevBtn = carousel.querySelector('.prev');
-        const nextBtn = carousel.querySelector('.next');
+        <?php endforeach; ?>
+    </div>
+</section>
 
-        prevBtn.addEventListener('click', () => {
-            items[current].classList.remove('opacity-100');
-            items[current].classList.add('opacity-0');
-            current = (current - 1 + items.length) % items.length;
-            items[current].classList.remove('opacity-0');
-            items[current].classList.add('opacity-100');
-        });
+<!-- SCRIPT CARROSSEL -->
+<script>
+document.querySelectorAll('.carousel-animal').forEach(carousel => {
+    const items = carousel.querySelectorAll('.carousel-item');
+    let current = 0;
 
-        nextBtn.addEventListener('click', () => {
-            items[current].classList.remove('opacity-100');
-            items[current].classList.add('opacity-0');
-            current = (current + 1) % items.length;
-            items[current].classList.remove('opacity-0');
-            items[current].classList.add('opacity-100');
-        });
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+
+    prevBtn.addEventListener('click', () => {
+        items[current].classList.remove('opacity-100');
+        items[current].classList.add('opacity-0');
+        current = (current - 1 + items.length) % items.length;
+        items[current].classList.remove('opacity-0');
+        items[current].classList.add('opacity-100');
     });
-    </script>
+
+    nextBtn.addEventListener('click', () => {
+        items[current].classList.remove('opacity-100');
+        items[current].classList.add('opacity-0');
+        current = (current + 1) % items.length;
+        items[current].classList.remove('opacity-0');
+        items[current].classList.add('opacity-100');
+    });
+});
+</script>
+
 
     <!-- CONTATO -->
     <section id="contato" class="py-12 text-center max-w-2xl mx-auto">

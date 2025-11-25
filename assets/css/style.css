@@ -175,6 +175,9 @@ footer {
 /* ======================= */
 /* 🎞️ SEÇÃO "CONHEÇA ALGUNS ANIMAIS" — COM LOOP INFINITO REAL */
 /* ======================= */
+.carousel-item {
+    object-position: center !important;
+}
 
 .carousel-section {
   background: #D6EEF7;

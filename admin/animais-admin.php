@@ -1,4 +1,5 @@
 <?php
+// animais-admin.php
 session_start();
 if(!isset($_SESSION['admin'])){
     header('Location: login.php');
@@ -7,10 +8,16 @@ if(!isset($_SESSION['admin'])){
 include 'config.inc.php';
 
 // Buscar todos os animais
-$stmt = $pdo->query("SELECT * FROM adocao ORDER BY nome");
+$stmt = $pdo->query("SELECT * FROM adocao ORDER BY id DESC");
 $animais = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
 
+// função para pegar primeira foto (se houver)
+function primeira_foto($pdo, $id){
+    $s = $pdo->prepare("SELECT caminho_foto FROM adocao_fotos WHERE id_animal = ? LIMIT 1");
+    $s->execute([$id]);
+    return $s->fetchColumn();
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,7 +26,6 @@ $animais = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../assets/css/admin.css">
 </head>
 <body>
-
 <div class="admin-container">
     <h2>Animais Cadastrados</h2>
 
@@ -43,8 +49,10 @@ $animais = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach($animais as $animal): ?>
             <tr>
                 <td>
-                    <?php if($animal['imagem'] && file_exists("../".$animal['imagem'])): ?>
-                        <img src="../<?= $animal['imagem'] ?>" class="img-preview">
+                    <?php
+                        $img = primeira_foto($pdo, $animal['id']);
+                        if($img && file_exists('../'.$img)): ?>
+                        <img src="../<?= htmlspecialchars($img) ?>" class="img-preview" alt="Imagem">
                     <?php else: ?>
                         Sem foto
                     <?php endif; ?>
@@ -62,6 +70,5 @@ $animais = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
     </table>
 </div>
-
 </body>
 </html>

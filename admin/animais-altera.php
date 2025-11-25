@@ -1,55 +1,49 @@
 <?php
+// animais-altera.php
 session_start();
-if (!isset($_SESSION['admin'])) {
+if(!isset($_SESSION['admin'])){
     header('Location: login.php');
     exit;
 }
-
 include 'config.inc.php';
 
-$id = $_GET['id'] ?? null;
-if (!$id) die("ID do animal não informado.");
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: animais-admin.php');
+    exit;
+}
 
-// Buscar dados do animal
-$stmt = $pdo->prepare("SELECT * FROM adocao WHERE id = ?");
-$stmt->execute([$id]);
-$animal = $stmt->fetch(PDO::FETCH_ASSOC);
+$id = $_POST['id'] ?? null;
+$nome = trim($_POST['nome'] ?? '');
+$idade = trim($_POST['idade'] ?? '');
+$sexo = trim($_POST['sexo'] ?? '');
+$descricao = trim($_POST['descricao'] ?? '');
 
-// Buscar fotos adicionais
-$stmtFotos = $pdo->prepare("SELECT * FROM adocao_fotos WHERE id_animal = ?");
-$stmtFotos->execute([$id]);
-$fotos = $stmtFotos->fetchAll(PDO::FETCH_ASSOC);
-?>
+if(!$id) die('ID ausente.');
 
-<form action="animais-altera-processa.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= $animal['id'] ?>">
+$stmt = $pdo->prepare("UPDATE adocao SET nome = ?, idade = ?, sexo = ?, descricao = ? WHERE id = ?");
+$stmt->execute([$nome, $idade, $sexo, $descricao, $id]);
 
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($animal['nome']) ?>" required>
+// Upload de novas fotos (se houver)
+if (!empty($_FILES['novas_fotos']['name'][0])) {
+    $uploadDir = '../uploads/';
+    if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
 
-    <label for="idade">Idade:</label>
-    <input type="text" name="idade" id="idade" value="<?= htmlspecialchars($animal['idade']) ?>" required>
+    for ($i=0; $i < count($_FILES['novas_fotos']['name']); $i++) {
+        if ($_FILES['novas_fotos']['error'][$i] === UPLOAD_ERR_OK) {
+            $tmp = $_FILES['novas_fotos']['tmp_name'][$i];
+            $origName = basename($_FILES['novas_fotos']['name'][$i]);
+            $ext = pathinfo($origName, PATHINFO_EXTENSION);
+            $filename = uniqid('img_') . '.' . $ext;
+            $destRel = 'uploads/' . $filename;
+            $destFull = '../' . $destRel;
 
-    <label for="sexo">Sexo:</label>
-    <select name="sexo" id="sexo">
-        <option value="Macho" <?= $animal['sexo']=='Macho'?'selected':'' ?>>Macho</option>
-        <option value="Fêmea" <?= $animal['sexo']=='Fêmea'?'selected':'' ?>>Fêmea</option>
-    </select>
+            if (move_uploaded_file($tmp, $destFull)) {
+                $stmtImg = $pdo->prepare("INSERT INTO adocao_fotos (id_animal, caminho_foto) VALUES (?, ?)");
+                $stmtImg->execute([$id, $destRel]);
+            }
+        }
+    }
+}
 
-    <label for="imagem">Imagem principal:</label>
-    <input type="file" name="imagem" id="imagem" accept="image/*">
-    <?php if($animal['imagem']): ?>
-        <img src="../<?= $animal['imagem'] ?>" alt="Imagem principal" style="width:150px;margin-top:5px;">
-    <?php endif; ?>
-
-    <label for="novas_fotos">Fotos adicionais:</label>
-    <input type="file" name="novas_fotos[]" id="novas_fotos" multiple accept="image/*">
-    <?php foreach($fotos as $foto): ?>
-        <img src="../<?= $foto['caminho_foto'] ?>" alt="Foto" style="width:100px;margin-top:5px;">
-    <?php endforeach; ?>
-
-    <label for="descricao">Descrição:</label>
-    <textarea name="descricao" id="descricao" rows="5"><?= htmlspecialchars($animal['descricao']) ?></textarea>
-
-    <button type="submit">Atualizar Animal</button>
-</form>
+header("Location: animais-admin.php?msg=atualizado");
+exit;

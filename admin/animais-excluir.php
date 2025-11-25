@@ -1,29 +1,39 @@
 <?php
+// animais-excluir.php
 session_start();
 if(!isset($_SESSION['admin'])){ header('Location: login.php'); exit; }
-
 include 'config.inc.php';
 
-$fotoId = $_GET['id'] ?? null;
-$animalId = $_GET['animal'] ?? null;
+$animalId = $_GET['id'] ?? null;
+if(!$animalId) die("ID do animal não informado.");
 
-if(!$fotoId || !$animalId) die("Dados incompletos.");
+// Pegar todas as fotos do animal
+$stmt = $pdo->prepare("SELECT caminho_foto FROM adocao_fotos WHERE id_animal = ?");
+$stmt->execute([$animalId]);
+$fotos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Pegar caminho da foto
-$stmt = $pdo->prepare("SELECT caminho_foto FROM adocao_fotos WHERE id=?");
-$stmt->execute([$fotoId]);
-$foto = $stmt->fetch(PDO::FETCH_ASSOC);
-
-if($foto){
-    // Apagar arquivo físico
-    if(file_exists('../'.$foto['caminho_foto'])){
-        unlink('../'.$foto['caminho_foto']);
-    }
-    // Apagar do banco
-    $stmt = $pdo->prepare("DELETE FROM adocao_fotos WHERE id=?");
-    $stmt->execute([$fotoId]);
+// Apagar arquivos físicos
+foreach($fotos as $foto){
+    $path = '../' . $foto['caminho_foto'];
+    if (file_exists($path)) unlink($path);
 }
 
-header("Location: animais-altera-form.php?id=$animalId");
+// Apagar registros de fotos do banco
+$stmt = $pdo->prepare("DELETE FROM adocao_fotos WHERE id_animal = ?");
+$stmt->execute([$animalId]);
+
+// Apagar o registro do animal (se tiver coluna imagem principal, também apagar)
+$stmt = $pdo->prepare("SELECT imagem FROM adocao WHERE id = ?");
+$stmt->execute([$animalId]);
+$animal = $stmt->fetch(PDO::FETCH_ASSOC);
+if($animal && !empty($animal['imagem'])){
+    $p = '../' . $animal['imagem'];
+    if(file_exists($p)) unlink($p);
+}
+
+// Apagar o registro do animal
+$stmt = $pdo->prepare("DELETE FROM adocao WHERE id = ?");
+$stmt->execute([$animalId]);
+
+header("Location: animais-admin.php");
 exit;
-?>
