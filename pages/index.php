@@ -1,35 +1,37 @@
+<?php
+include '../admin/config.inc.php'; // Conexão com o banco
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Peludos Unipê</title>
 
-    <!-- TAILWIND -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-<!-- TEU CSS (vem depois!) -->
-<link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
-
-    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
-    <!-- Config Tailwind -->
     <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        primary: "#FF7D63",
-                        background-light: "#FFF8F0",
-                        background-dark: "#0B4F6C",
-                        text-light: "#0B4F6C",
-                        text-dark: "#FFF8F0",
-                        accent: "#A8DADC"
+                        
+                        'primary': "#1115f2",
+                        'secondary': "#6611f2", 
+                        'accent': "#B75CFF",    
+
+                        'background-light': "#f5f5f5",
+                        'background-dark': "#006036",
+                        'text-light': "#ffffff",     
+                        'text-dark': "#333333",     
                     },
                     fontFamily: {
                         display: ["Plus Jakarta Sans", "sans-serif"]
@@ -47,21 +49,15 @@
 </head>
 
 <body>
-
 <?php include('../includes/menu.php'); ?>
 
 <main class="home">
 
-    <!-- HERO -->
-    <section class="hero-img">
-    <img src="../assets/img/banner 2.1.png" alt="Banner">
-</section>
+    <section id="topo" class="hero-img">
+        <img src="../assets/img/banner 3.1.png" alt="Banner">
+    </section>
 
-
-
-
-   <!-- CARROSSEL -->
-<section class="carousel-section">
+    <section class="carousel-section">
     <h2 class="carousel-title">Conheça Alguns Animais</h2>
 
     <div class="carousel">
@@ -72,7 +68,6 @@
             <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
             <div class="carousel-item"><img src="../assets/img/peludo4.png" alt="Peludo 4"></div>
 
-            <!-- Duplicação para loop -->
             <div class="carousel-item"><img src="../assets/img/peludo1.png" alt="Peludo 1"></div>
             <div class="carousel-item"><img src="../assets/img/peludo2.png" alt="Peludo 2"></div>
             <div class="carousel-item"><img src="../assets/img/peludo3.png" alt="Peludo 3"></div>
@@ -82,125 +77,94 @@
     </div>
 </section>
 
-
-<section id="acoes" class="py-16 px-4 max-w-6xl mx-auto">
-
+    <section id="acoes" class="py-16 px-4 max-w-6xl mx-auto">
     <div class="grid md:grid-cols-3 gap-8">
-
-        <!-- DOAÇÃO -->
-        <div class="bg-white border border-[#7CBFD6] rounded-2xl p-8 shadow-sm">
-            <span class="material-symbols-outlined text-5xl text-[#2F6C86] mb-4 block">
-                volunteer_activism
-            </span>
-
-            <h3 class="text-xl font-semibold text-[#2F6C86] mb-2">
-                Faça uma Doação
-            </h3>
-
-            <p class="text-[#2F6C86]/70 mb-6">
-                Sua contribuição ajuda a cobrir custos de veterinário, comida e cuidados para nossos animais.
-            </p>
-
-            <a href="doacao.php"
-               class="block w-full text-center py-3 rounded-md font-semibold text-white transition"
-               style="background:#7CBFD6"
-               onmouseover="this.style.background='#2F6C86'"
-               onmouseout="this.style.background='#7CBFD6'">
+        
+        <div class="bg-background-light border border-accent rounded-2xl p-8 shadow-md flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div>
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4 block">volunteer_activism</span>
+                
+                <h3 class="text-xl font-semibold text-secondary mb-2">Faça uma Doação</h3>
+                
+                <p class="text-text-dark/80 mb-6">
+                    Sua contribuição ajuda a cobrir custos de veterinário, comida e cuidados para nossos animais.
+                </p>
+            </div>
+            <a href="doacao.php" 
+                class="block w-full text-center py-3 rounded-md font-semibold text-white bg-primary transition-colors duration-300 hover:bg-secondary">
                 Doar Agora
             </a>
         </div>
-
-        <!-- APADRINHAMENTO -->
-        <div class="bg-white border border-[#7CBFD6] rounded-2xl p-8 shadow-sm">
-            <span class="material-symbols-outlined text-5xl text-[#2F6C86] mb-4 block">
-                pets
-            </span>
-
-            <h3 class="text-xl font-semibold text-[#2F6C86] mb-2">
-                Seja Padrinho/Madrinha
-            </h3>
-
-            <p class="text-[#2F6C86]/70 mb-6">
-                Apoie um peludo mensalmente e receba atualizações sobre ele.
-            </p>
-
-            <a href="apadrinhar.php"
-               class="block w-full text-center py-3 rounded-md font-semibold text-white transition"
-               style="background:#7CBFD6"
-               onmouseover="this.style.background='#2F6C86'"
-               onmouseout="this.style.background='#7CBFD6'">
+        
+        <div class="bg-background-light border border-accent rounded-2xl p-8 shadow-md flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div>
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4 block">pets</span>
+                
+                <h3 class="text-xl font-semibold text-secondary mb-2">Seja Padrinho/Madrinha</h3>
+                
+                <p class="text-text-dark/80 mb-6">
+                    Apoie um peludo mensalmente e receba atualizações sobre ele.
+                </p>
+            </div>
+            <a href="apadrinhar.php" 
+                class="block w-full text-center py-3 rounded-md font-semibold text-white bg-primary transition-colors duration-300 hover:bg-secondary">
                 Apadrinhar
             </a>
         </div>
-
-        <!-- VOLUNTARIADO -->
-        <div class="bg-white border border-[#7CBFD6] rounded-2xl p-8 shadow-sm">
-            <span class="material-symbols-outlined text-5xl text-[#2F6C86] mb-4 block">
-                groups
-            </span>
-
-            <h3 class="text-xl font-semibold text-[#2F6C86] mb-2">
-                Quero Ser Voluntário!
-            </h3>
-
-            <p class="text-[#2F6C86]/70 mb-6">
-                Ajude a cuidar, divulgar e apoiar nossos peludos!
-            </p>
-
-            <a href="voluntario.php"
-               class="block w-full text-center py-3 rounded-md font-semibold text-white transition"
-               style="background:#7CBFD6"
-               onmouseover="this.style.background='#2F6C86'"
-               onmouseout="this.style.background='#7CBFD6'">
+        
+        <div class="bg-background-light border border-accent rounded-2xl p-8 shadow-md flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div>
+                <span class="material-symbols-outlined text-5xl text-secondary mb-4 block">groups</span>
+                
+                <h3 class="text-xl font-semibold text-secondary mb-2">Quero Ser Voluntário!</h3>
+                
+                <p class="text-text-dark/80 mb-6">
+                    Ajude a cuidar, divulgar e apoiar nossos peludos!
+                </p>
+            </div>
+            <a href="voluntario.php" 
+                class="block w-full text-center py-3 rounded-md font-semibold text-white bg-primary transition-colors duration-300 hover:bg-secondary">
                 Participar
             </a>
         </div>
-
+        
     </div>
-
 </section>
-
-
-
-
     <div class="max-w-3xl mx-auto space-y-16 text-center">
 
-        <!-- BLOCO 1 -->
-        <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-                Nosso Propósito
-            </h3>
+<div class="space-y-4">
+    <h3 class="text-2xl md:text-3xl font-bold text-primary">
+        Nosso Propósito
+    </h3>
 
-            <p class="text-lg opacity-90 leading-relaxed">
-                O <strong>Peludos Unipê</strong> nasceu dentro do
-                <strong>Centro Universitário de João Pessoa</strong> como uma iniciativa de amor e empatia.
-                Inspirado pelo perfil do Instagram <em>@peludosunipe</em>, o projeto foi trazido para o ambiente web
-                com o objetivo de ampliar o alcance das adoções e conectar ainda mais pessoas à causa animal.<br>
-                Nosso objetivo é construir uma ponte entre animais abandonados e pessoas dispostas a transformar vidas.
-                Através do site, você pode conhecer cada peludo, saber sua história e dar o primeiro passo para uma
-                adoção responsável e cheia de amor. ❤️
-            </p>
-        </div>
+    <p class="text-lg leading-relaxed text-text-dark/90">
+        O <strong class="text-secondary font-extrabold">Peludos Unipê</strong> nasceu dentro do
+        <strong class="text-secondary font-extrabold">Centro Universitário de João Pessoa</strong> como uma iniciativa de amor e empatia.
+        Inspirado pelo perfil do Instagram <em>@peludosunipe</em>, o projeto foi trazido para o ambiente web
+        com o objetivo de ampliar o alcance das adoções e conectar ainda mais pessoas à causa animal.<br>
+        Nosso objetivo é construir uma ponte entre animais abandonados e pessoas dispostas a transformar vidas.
+        Através do site, você pode conhecer cada peludo, saber sua história e dar o primeiro passo para uma
+        adoção responsável e cheia de amor. ❤️
+    </p>
+</div>
 
-        <!-- BLOCO 2 -->
-        <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-primary">
-                Para Além dos Muros da Faculdade
-            </h3>
+<div class="space-y-4">
+    <h3 class="text-2xl md:text-3xl font-bold text-primary">
+        Para Além dos Muros da Faculdade
+    </h3>
 
-            <p class="text-lg opacity-90 leading-relaxed">
-                O projeto é aberto a toda a comunidade!
-                Pessoas de fora do Unipê também podem adotar, ajudar com doações ou participar da divulgação.
-                Juntos, criamos uma rede de cuidado e carinho pelos nossos amigos de quatro patas 🐾
-            </p>
-            <br>
-            <br>
-        </div>
+    <p class="text-lg leading-relaxed text-text-dark/90">
+        O projeto é aberto a toda a comunidade!
+        Pessoas de fora do Unipê também podem adotar, ajudar com doações ou participar da divulgação.
+        Juntos, criamos uma rede de cuidado e carinho pelos nossos amigos de quatro patas 🐾
+    </p>
+    <br>
+    <br>
+</div>
 
-    </div>
+</div>
 
-    <!-- ADOÇÃO -->
-    <section class="w-full py-20" style="background-color: #07374A;">
+    <section class="w-full py-20 bg-[#000366]">
     <div class="max-w-5xl mx-auto px-6 text-center">
 
         <h3 class="text-3xl font-extrabold text-white mb-12">
@@ -209,12 +173,12 @@
 
         <div class="grid md:grid-cols-3 gap-12">
 
-            <!-- Passo 1 -->
             <div class="flex flex-col items-center">
                 <div class="w-16 h-16 flex items-center justify-center 
-                            bg-white text-text-light 
+                            bg-white 
+                            text-primary          
                             rounded-full 
-                            text-2xl font-extrabold mb-4 shadow-lg">
+                            text-2xl font-extrabold mb-4 shadow-xl">
                     1
                 </div>
                 <h4 class="text-xl font-semibold text-white mb-2">
@@ -225,12 +189,12 @@
                 </p>
             </div>
 
-            <!-- Passo 2 -->
             <div class="flex flex-col items-center">
                 <div class="w-16 h-16 flex items-center justify-center 
-                            bg-white text-text-light 
+                            bg-white 
+                            text-primary           
                             rounded-full 
-                            text-2xl font-extrabold mb-4 shadow-lg">
+                            text-2xl font-extrabold mb-4 shadow-xl">
                     2
                 </div>
                 <h4 class="text-xl font-semibold text-white mb-2">
@@ -241,12 +205,12 @@
                 </p>
             </div>
 
-            <!-- Passo 3 -->
             <div class="flex flex-col items-center">
                 <div class="w-16 h-16 flex items-center justify-center 
-                            bg-white text-text-light 
+                            bg-white 
+                            text-primary           
                             rounded-full 
-                            text-2xl font-extrabold mb-4 shadow-lg">
+                            text-2xl font-extrabold mb-4 shadow-xl">
                     3
                 </div>
                 <h4 class="text-xl font-semibold text-white mb-2">
@@ -260,156 +224,130 @@
         </div>
     </div>
 </section>
-<section class="py-12 md:py-20" id="adocao">
+    <section class="py-12 md:py-20 " id="adocao">
     <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-text-light dark:text-text-dark">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-primary">
             Nossos Peludos Esperando um Lar
         </h2>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-        <!-- 1 -->
-        <div class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-text-light/10 hover:shadow-xl transition">
-            <div class="aspect-square bg-cover bg-center"
-                style="background-image: url('../assets/img/gato1.png');"></div>
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-1">Kiara</h3>
-                <p class="text-sm opacity-70 mb-3">Fêmea, 5 Meses</p>
+<?php 
+$stmt = $pdo->query("SELECT * FROM adocao ORDER BY nome");
+$peludos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-        style="background-color: #7CBFD6;"
-        onmouseover="this.style.backgroundColor='#2F6C86'"
-        onmouseout="this.style.backgroundColor='#7CBFD6'">
-    Ver Perfil
-</button>
+foreach($peludos as $peludo): 
 
-            </div>
-        </div>
+    
+    $stmtFotos = $pdo->prepare("SELECT caminho_foto FROM adocao_fotos WHERE id_animal = ?");
+    $stmtFotos->execute([$peludo['id']]);
+    $fotos = $stmtFotos->fetchAll(PDO::FETCH_ASSOC);
 
-        <!-- 2 -->
-        <div class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-text-light/10 hover:shadow-xl transition">
-            <div class="aspect-square bg-cover bg-center"
-                style="background-image: url('../assets/img/gato2.png');"></div>
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-1">Nala</h3>
-                <p class="text-sm opacity-70 mb-3">Fêmea, 5 Meses</p>
+    
+    if(empty($peludo['imagem']) && empty($fotos)) {
+        $fotos = [['caminho_foto' => '../assets/img/default.png']];
+    } else {
 
-                <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-        style="background-color: #7CBFD6;"
-        onmouseover="this.style.backgroundColor='#2F6C86'"
-        onmouseout="this.style.backgroundColor='#7CBFD6'">
-    Ver Perfil
-</button>
+        
+        if(!empty($peludo['imagem'])) {
+            array_unshift($fotos, ['caminho_foto' => '../' . $peludo['imagem']]);
+        }
 
-            </div>
-        </div>
+        
+        foreach($fotos as $i => $f) {
+            if(strpos($f['caminho_foto'], '../') !== 0) {
+                $fotos[$i]['caminho_foto'] = '../' . $f['caminho_foto'];
+            }
+        }
+    }
+?>
 
-        <!-- 3 -->
-        <div class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-text-light/10 hover:shadow-xl transition">
-            <div class="aspect-square bg-cover bg-center"
-                style="background-image: url('../assets/img/gato3.png');"></div>
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-1">Tom</h3>
-                <p class="text-sm opacity-70 mb-3">Macho, 3 anos</p>
+<div class="rounded-xl overflow-hidden shadow-md bg-white">
 
-                <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-        style="background-color: #7CBFD6;"
-        onmouseover="this.style.backgroundColor='#2F6C86'"
-        onmouseout="this.style.backgroundColor='#7CBFD6'">
-    Ver Perfil
-</button>
+    <div class="carousel-animal relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-gray-100">
 
-            </div>
-        </div>
+        <?php foreach($fotos as $index => $foto): ?>
+            <img src="<?= $foto['caminho_foto'] ?>"
+                 class="carousel-item absolute w-full h-full object-contain object-center transition-opacity <?= $index === 0 ? 'opacity-100' : 'opacity-0' ?>">
+        <?php endforeach; ?>
 
-        <!-- 4 -->
-        <div class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-text-light/10 hover:shadow-xl transition">
-            <div class="aspect-square bg-cover bg-center"
-                style="background-image: url('../assets/img/gato4.png');"></div>
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-1">Olive</h3>
-                <p class="text-sm opacity-70 mb-3">Macho, 3 anos</p>
-                <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-        style="background-color: #7CBFD6;"
-        onmouseover="this.style.backgroundColor='#2F6C86'"
-        onmouseout="this.style.backgroundColor='#7CBFD6'">
-    Ver Perfil
-</button>
+        <button class="prev absolute left-2 top-1/2 -translate-y-1/2 bg-[#7CBFD6] hover:bg-[#2F6C86] 
+                text-white px-2 py-1 rounded-full shadow-lg z-10">&lt;</button>
 
+        <button class="next absolute right-2 top-1/2 -translate-y-1/2 bg-[#7CBFD6] hover:bg-[#2F6C86] 
+                text-white px-2 py-1 rounded-full shadow-lg z-10">&gt;</button>
 
-            </div>
-        </div>
-
-        <!-- 5 -->
-        <div class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-text-light/10 hover:shadow-xl transition">
-            <div class="aspect-square bg-cover bg-center"
-                style="background-image: url('../assets/img/gato5.png');"></div>
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-1">Amora</h3>
-                <p class="text-sm opacity-70 mb-3">Fêmea, 2 a 3 anos</p>
-
-                <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-        style="background-color: #7CBFD6;"
-        onmouseover="this.style.backgroundColor='#2F6C86'"
-        onmouseout="this.style.backgroundColor='#7CBFD6'">
-    Ver Perfil
-</button>
-
-            </div>
-        </div>
-   <!-- 6 -->
-   <div class="rounded-xl overflow-hidden shadow-md bg-white dark:bg-text-light/10 hover:shadow-xl transition">
-            <div class="aspect-square bg-cover bg-center"
-                style="background-image: url('../assets/img/gato6.png');"></div>
-            <div class="p-4">
-                <h3 class="text-lg font-bold mb-1">Alícia </h3>
-                <p class="text-sm opacity-70 mb-3">Fêmea, 2 a 3 anos</p>
-                <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
-        style="background-color: #7CBFD6;"
-        onmouseover="this.style.backgroundColor='#2F6C86'"
-        onmouseout="this.style.backgroundColor='#7CBFD6'">
-    Ver Perfil
-</button>
     </div>
-</section>
 
-    <!-- CONTATO -->
-    <section id="contato" style="margin-top: 3rem; margin-bottom: 3rem;">
+    <div class="p-4">
+        <h3 class="text-lg font-bold mb-1"><?= htmlspecialchars($peludo['nome']) ?></h3>
+        <p class="text-sm opacity-70 mb-3"><?= htmlspecialchars($peludo['sexo']) ?>, <?= htmlspecialchars($peludo['idade']) ?></p>
 
-<div class="text-center" style="max-width: 600px; margin: 0 auto 2rem auto;">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4" style="color:#2F6C86;">
-        Fale Conosco
-    </h2>
-
-    <p class="text-lg" style="color:#2F6C86; opacity:0.9;">
-        Tem alguma dúvida ou quer saber mais sobre nosso trabalho?  
-        Mande uma mensagem.
-    </p>
+        <a href="animal-detalhe.php?id=<?= $peludo['id'] ?>">
+            <button class="mt-4 w-full flex items-center justify-center rounded-lg h-10 px-4 text-white text-sm font-bold transition"
+                    style="background-color: #7CBFD6;"
+                    onmouseover="this.style.backgroundColor='#2F6C86'"
+                    onmouseout="this.style.backgroundColor='#7CBFD6'">
+                Ver Perfil
+            </button>
+        </a>
+    </div>
 </div>
 
-<form class="form-contato">
-    <label for="name">Nome</label>
-    <input id="name" type="text" placeholder="Seu nome">
+<?php endforeach; ?>
+</div>
+</section>
 
-    <label for="email">Email</label>
-    <input id="email" type="email" placeholder="Seu email">
+<script>
+document.querySelectorAll('.carousel-animal').forEach(carousel => {
+const items = carousel.querySelectorAll('.carousel-item');
+let current = 0;
 
-    <label for="subject">Assunto</label>
-    <input id="subject" type="text" placeholder="Assunto">
+const prevBtn = carousel.querySelector('.prev');
+const nextBtn = carousel.querySelector('.next');
 
-    <label for="message">Mensagem</label>
-    <textarea id="message" rows="4" placeholder="Sua mensagem"></textarea>
+prevBtn.addEventListener('click', () => {
+items[current].classList.remove('opacity-100');
+items[current].classList.add('opacity-0');
+current = (current - 1 + items.length) % items.length;
+items[current].classList.remove('opacity-0');
+items[current].classList.add('opacity-100');
+});
 
-    <button class="btn-enviar-form">Enviar mensagem</button>
-</form>
+nextBtn.addEventListener('click', () => {
+items[current].classList.remove('opacity-100');
+items[current].classList.add('opacity-0');
+current = (current + 1) % items.length;
+items[current].classList.remove('opacity-0');
+items[current].classList.add('opacity-100');
+});
+});
+</script>
 
+    <section id="contato" class="py-12 text-center max-w-2xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-primary">Fale Conosco</h2>
+    
+    <p class="text-lg mb-6 text-text-dark/90">
+        Tem alguma dúvida ou quer saber mais sobre nosso trabalho? Mande uma mensagem.
+    </p>
+
+    <form class="form-contato flex flex-col gap-4 bg-background-light p-8 rounded-2xl shadow-lg border border-accent">
+        
+        <input id="name" type="text" placeholder="Seu nome" class="p-3 border border-primary rounded-lg focus:ring-secondary focus:border-secondary transition-all">
+        <input id="email" type="email" placeholder="Seu email" class="p-3 border border-primary rounded-lg focus:ring-secondary focus:border-secondary transition-all">
+        <input id="subject" type="text" placeholder="Assunto" class="p-3 border border-primary rounded-lg focus:ring-secondary focus:border-secondary transition-all">
+        <textarea id="message" rows="4" placeholder="Sua mensagem" class="p-3 border border-primary rounded-lg focus:ring-secondary focus:border-secondary transition-all"></textarea>
+        
+        <button class="btn-enviar-form bg-primary hover:bg-secondary text-white py-3 rounded-lg font-semibold transition-colors duration-300">
+            Enviar mensagem
+        </button>
+    </form>
 </section>
 
 </main>
 
 <script src="../assets/js/patinhas.js"></script>
 <?php include('../includes/rodape.php'); ?>
-
 </body>
 </html>

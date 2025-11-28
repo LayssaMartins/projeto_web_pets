@@ -1,47 +1,41 @@
-<footer class="footer w-full bg-background-light dark:bg-background-dark py-10">
+<footer class="footer w-full bg-[#00005f] py-10 text-white">
 
     <div class="max-w-6xl mx-auto px-4 text-center space-y-10">
 
-        <!-- LOGO -->
-        <div>
+        <div class="text-white">
             <h2 class="text-2xl font-bold">
                 <a href="index.php">🐾 Peludos <span class="text-primary">Unipê</span></a>
             </h2>
             <p class="text-sm opacity-70 mt-1">Salvando vidas, uma patinha de cada vez.</p>
         </div>
 
-        <!-- COLUNAS -->
         <div class="grid sm:grid-cols-3 gap-10">
 
-            <!-- Navegação -->
             <div>
-                <h3 class="font-bold mb-3">Navegação</h3>
+                <h3 class="font-bold mb-3 text-lg text-primary">Navegação</h3>
                 <ul class="space-y-2 text-sm opacity-80">
-                    <li><a href="#home" class="hover:text-primary">Início</a></li>
-                    <li><a href="#sobre" class="hover:text-primary">Sobre</a></li>
-                    <li><a href="#acoes" class="hover:text-primary">Ajude</a></li>
-                    <li><a href="#adocao" class="hover:text-primary">Adotar</a></li>
-                    <li><a href="#contato" class="hover:text-primary">Contato</a></li>
+                    <li><a href="#topo" class="hover:text-primary transition-colors">Início</a></li>
+                    <li><a href="#sobre" class="hover:text-primary transition-colors">Sobre</a></li>
+                    <li><a href="#acoes" class="hover:text-primary transition-colors">Ajude</a></li>
+                    <li><a href="#adocao" class="hover:text-primary transition-colors">Adotar</a></li>
+                    <li><a href="#contato" class="hover:text-primary transition-colors">Contato</a></li>
                 </ul>
             </div>
 
-            <!-- Ajude -->
             <div>
-                <h3 class="font-bold mb-3">Ajude</h3>
+                 <h3 class="font-bold mb-3 text-lg text-primary">Ajude</h3>
                 <ul class="space-y-2 text-sm opacity-80">
-                    <li><a href="/pages/doacao.php" class="hover:text-primary">Doar</a></li>
-                    <li><a href="/pages/apadrinhar.php" class="hover:text-primary">Apadrinhar</a></li>
-                    <li><a href="/pages/voluntario.php" class="hover:text-primary">Ser Voluntário</a></li>
-
+                <li><a href="../pages/doacao.php" class="hover:text-primary transition-colors">Doar</a></li>
+                <li><a href="../pages/apadrinhar.php" class="hover:text-primary transition-colors">Apadrinhar</a></li>
+                <li><a href="../pages/voluntario.php" class="hover:text-primary transition-colors">Ser Voluntário</a></li>
                 </ul>
             </div>
 
-            <!-- Instagram -->
             <div>
-                <h3 class="font-bold mb-3">Siga-nos</h3>
+                 <h3 class="font-bold mb-3 text-lg text-primary">Siga-nos</h3>
 
                 <a href="https://instagram.com/peludosunipe" target="_blank"
-                   class="flex items-center justify-center gap-2 hover:text-primary transition">
+                    class="flex items-center justify-center gap-2 hover:text-primary transition-colors">
 
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 
@@ -59,10 +53,9 @@
 
         </div>
 
-        <!-- Direitos -->
-        <div class="text-sm opacity-70 pt-4 border-t border-primary/20">
+        <div class="text-sm opacity-70 pt-4 border-t border-white/20">
             © 2025 Peludos Unipê — Desenvolvido por
-            <strong>Layssa Evellyn</strong> & <strong>Tainara David</strong> 💛
+            <strong class="text-primary">Layssa Evellyn</strong> & <strong class="text-primary">Tainara David</strong> 🐾
         </div>
     </div>
 

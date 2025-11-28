@@ -9,8 +9,8 @@
 }
 
 body {
-  background: linear-gradient(180deg, #F4FBFF 0%, #B4DDED 100%);
-  color: #2F6C86;
+  background-color: #f5f5f5; /* FUNDO BRANCO */
+  color: #333333;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -21,13 +21,47 @@ main { flex: 1; }
 a { text-decoration: none; color: inherit; transition:0.3s; }
 
 /* Navbar */
-header { background-color: #B4DDED; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top:0; z-index:1000; }
-.navbar { display:flex; justify-content:space-between; align-items:center; padding:1rem 4rem; background-color:#B4DDED; }
-.logo a { color:#2F6C86; font-size:1.5rem; font-weight:700; }
-.logo span { color:#7CBFD6; }
-.menu { list-style:none; display:flex; gap:2rem; }
-.menu a { font-weight:500; }
-.menu a:hover { color:#2F6C86; transform:scale(1.1); }
+header { 
+  background-color: #00005f !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); 
+  position: sticky; 
+  top:0; 
+  z-index:1000; 
+}
+
+.navbar { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  padding:1rem 4rem; 
+  background-color:#00005f !important;
+}
+
+.logo a { 
+  color:#ffffff !important;
+  font-size:1.5rem; 
+  font-weight:700; 
+}
+
+.logo span { 
+  color: #1115f2!important;
+}
+
+.menu { 
+  list-style:none; 
+  display:flex; 
+  gap:2rem; 
+}
+
+.menu a { 
+  font-weight:500; 
+  color:#ffffff !important;
+}
+
+.menu a:hover { 
+  background-color:#00005f !important;
+  transform:scale(1.1); 
+}
 
 /* Botões */
 .btn, .btn-adotar, .btn-enviar, .btn-sec {
@@ -35,11 +69,14 @@ header { background-color: #B4DDED; box-shadow: 0 2px 6px rgba(0,0,0,0.1); posit
   cursor:pointer;
   font-weight:600;
   transition:0.3s;
-  background-color:#7CBFD6;
+  background-color:#1115f2;
   color:#fff;
+  border: 2px solid #1115f2;
 }
+
 .btn:hover, .btn-adotar:hover, .btn-enviar:hover, .btn-sec:hover {
-  background-color:#2F6C86;
+  background-color:#6611f2;
+  border-color: #6611f2;
   transform:scale(1.05);
 }
 
@@ -52,7 +89,7 @@ header { background-color: #B4DDED; box-shadow: 0 2px 6px rgba(0,0,0,0.1); posit
   background: url('../assets/img/patinha.png') no-repeat center/contain;
   animation: subirPatinha 6s linear forwards;
   opacity: 0.9;
-  filter: drop-shadow(0 0 5px rgba(44,108,134,0.5));
+  filter: drop-shadow(0 0 5px rgba(17, 21, 242, 0.5));
 }
 
 @keyframes subirPatinha {
@@ -62,31 +99,34 @@ header { background-color: #B4DDED; box-shadow: 0 2px 6px rgba(0,0,0,0.1); posit
 
 /* Footer */
 footer {
-  background: linear-gradient(180deg,#F4FBFF,#B4DDED);
-  color:#2F6C86;
+  background-color: #191940;
+  color:#333333;
   padding:2rem 1rem;
   font-size:0.9rem;
   margin-top:auto;
   text-align:center;
-  border-top:3px solid #7CBFD6;
+  border-top:3px solid #1115f2;
 }
 
 /* Hero */
 .hero {
   text-align:center;
   padding:4rem 2rem;
-  background: linear-gradient(135deg, #B4DDED, #F4FBFF);
+  background: #CB8AFF; 
   border-radius:20px;
   max-width:900px;
   margin:2rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
+
 .hero h1 {
-  color:#2F6C86;
+  color:#1115f2;
   font-size:2.5rem;
   margin-bottom:1rem;
 }
+
 .hero p {
-  color:#2F6C86;
+  color:#333333;
   font-size:1.2rem;
   margin-bottom:2rem;
   line-height:1.5;
@@ -100,8 +140,16 @@ footer {
   text-align:center;
   line-height:1.6;
 }
-.sobre-projeto h2 { color:#2F6C86; margin-bottom:1rem; }
-.sobre-projeto p { color:#2F6C86; margin-bottom:1rem; }
+
+.sobre-projeto h2 { 
+  color:#6611f2; 
+  margin-bottom:1rem; 
+}
+
+.sobre-projeto p { 
+  color:#333333; 
+  margin-bottom:1rem; 
+}
 
 /* Ações */
 .acoes {
@@ -110,7 +158,12 @@ footer {
   gap:1.5rem;
   margin-top:1.5rem;
 }
-.btn-sec { padding:0.8rem 1.5rem; }
+
+.btn-sec { 
+  padding:0.8rem 1.5rem; 
+  background-color: #1115f2;
+  color: #B75CFF;
+}
 
 /* Cards de adoção */
 .animais-lista {
@@ -120,22 +173,28 @@ footer {
   gap:2rem;
   padding:3rem 1rem;
 }
+
 .animal-card {
-  background: linear-gradient(135deg, #F4FBFF, #B4DDED);
+  background: #B75CFF;
   border-radius:20px;
   box-shadow:0 4px 15px rgba(0,0,0,0.15);
   width:280px;
   text-align:center;
   padding:1.5rem;
   transition:0.3s;
+  border: 1px solid #B75CFF;
 }
+
 .animal-card img {
   width:100%;
   height:200px;
   border-radius:15px;
   object-fit:cover;
 }
-.animal-card:hover { transform:translateY(-5px); }
+
+.animal-card:hover { 
+  transform:translateY(-5px); 
+}
 
 /* Formulário */
 .form-contato {
@@ -143,22 +202,24 @@ footer {
   flex-direction:column;
   max-width:600px;
   margin:2rem auto;
-  background: linear-gradient(135deg,#F4FBFF,#B4DDED);
+  background: #f5f5f5;
   padding:2rem;
   border-radius:20px;
   box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
+
 .form-contato label {
   margin-bottom:0.5rem;
   font-weight:600;
-  color:#2F6C86;
+  color:#333333;
 }
+
 .form-contato input,
 .form-contato textarea,
 .form-contato select {
   margin-bottom:1rem;
   padding:0.8rem;
-  border:1px solid #7CBFD6;
+  border:1px solid #1115f2;
   border-radius:10px;
   font-size:1rem;
 }
@@ -173,27 +234,26 @@ footer {
 }
 
 /* ======================= */
-/* 🎞️ SEÇÃO "CONHEÇA ALGUNS ANIMAIS" — COM LOOP INFINITO REAL */
+/* 🎞 CARROSSEL — LOOP INFINITO */
 /* ======================= */
-
 .carousel-section {
-  background: #D6EEF7;
+  background: #f5f5f5;
   padding: 2.5rem 1rem;
   border-radius: 20px;
   max-width: 900px;
   margin: 3rem auto;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border: 1px solid #B75CFF;
 }
 
 .carousel-title {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: #2F6C86;
+  color: #6611f2;
 }
 
-/* 🟦 NOVO CARROSSEL — sem duplicações e com loop perfeito */
 .carousel {
   overflow: hidden;
   width: 100%;
@@ -203,7 +263,7 @@ footer {
 .carousel-track {
   display: flex;
   gap: 1rem;
-  width: max-content;   /* Essencial pro loop não abrir espaço */
+  width: max-content;
   animation: scroll 20s linear infinite;
 }
 
@@ -220,39 +280,30 @@ footer {
   border-radius: 15px;
 }
 
-/* LOOP SUAVE SEM VAZIO */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ======== AJUSTES DE COR PARA OS CARDS DE AÇÃO ======== */
-
+/* Cards "Ajude" */
 .card-acao {
-  background: linear-gradient(135deg, #F4FBFF, #B4DDED);
+  background: #f5f5f5;
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-  border: 1px solid #7CBFD6
+  border: 1px solid #B75CFF;
 }
 
 .card-acao:hover {
   transform: translateY(-5px);
 }
 
-/* Ícone */
 .card-acao .icone {
   font-size: 40px;
-  color: #2F6C86;
+  color: #6611f2;
   margin-bottom: 10px;
 }
 
-/* Botão */
 .card-acao .btn-acao {
   display: block;
   width: 100%;
   padding: 0.8rem;
-  background: #7CBFD6;
+  background: #1115f2;
   color: #fff;
   border-radius: 12px;
   font-weight: 600;
@@ -260,21 +311,20 @@ footer {
 }
 
 .card-acao .btn-acao:hover {
-  background: #2F6C86;
+  background: #6611f2;
 }
 
-/* ======== DESTACAR A SEÇÃO "FALE CONOSCO" ======== */
-
+/* Formulário "Fale Conosco" */
 .form-contato-home {
-  background: linear-gradient(135deg, #F4FBFF, #B4DDED);
+  background: #f5f5f5;
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-  border: 1px solid #7CBFD6;
+  border: 1px solid #11f2ee;
 }
 
 .btn-enviar-form {
-  background: #7CBFD6 !important;
+  background: #1115f2 !important;
   color: white !important;
   font-weight: 700;
   padding: 0.8rem;
@@ -283,10 +333,8 @@ footer {
 }
 
 .btn-enviar-form:hover {
-  background: #2F6C86 !important;
+  background: #6611f2 !important;
 }
-
-
 
 
 
