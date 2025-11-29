@@ -17,19 +17,24 @@
             extend: {
                 colors: {
                     primary: {
-                        DEFAULT: "#1115f2",
-                        light: "#d0d1f7",
+                        DEFAULT: "#2563EB",    
+                        light: "#93C5FD",      
                     },
-                    secondary: "#6611f2",
-                    accent: "#11f2ee",
+                    secondary: "#F97316",      
+                    accent: "#FFEAD2",
 
-                    // Base
-                    "background-light": "#f5f5f5",
-                    "background-dark": "#000366",
-                    "text-dark": "#333333",
-                    "text-light": "#ffffff",
-                    "subtext-light": "#64748b",
-                    "subtext-dark": "#94a3b8",
+                    /* Base */
+                    "background-light": "#F9FAFB",
+                    "background-dark": "#111827",
+
+                    "text-dark": "#1F2937",
+                    "text-light": "#F8FAFC",
+
+                    "subtext-light": "#6B7280",
+                    "subtext-dark": "#9CA3AF",
+
+                    /* Cor oficial do rodapé */
+                    "footer-blue": "#163A67",
                 },
 
                 fontFamily: {
@@ -44,12 +49,13 @@
                 },
 
                 boxShadow: {
-                    "roxinho": "0 0 18px 0 rgba(102, 17, 242, 0.45)"
+                    "roxinho": "0 0 18px 0 rgba(37, 99, 235, 0.45)"
                 }
             }
         }
     }
 </script>
+
 </head>
 
 <body class="font-display bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light">
@@ -230,10 +236,10 @@
                 Junte-se à nossa equipe de voluntários e ajude a transformar vidas.
             </p>
 
-            <button class="mt-4 h-12 px-6 rounded-xl bg-secondary text-white font-bold 
-                hover:bg-primary transition duration-300">
-                Falar com a Equipe
-            </button>
+                  <a href="../pages/index.php#contato"
+   class="mt-8 flex mx-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 bg-secondary hover:bg-secondary/90 text-white text-base font-bold leading-normal tracking-wide transition-colors duration-300">
+    <span class="truncate">Falar com a Equipe</span>
+</a>
         </div>
     </section>
 

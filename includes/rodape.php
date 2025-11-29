@@ -1,11 +1,11 @@
-<footer class="footer w-full bg-primary py-10 text-text-light">
+<footer class="footer w-full bg-footer-blue py-10 text-text-light">
 
 
     <div class="max-w-6xl mx-auto px-4 text-center space-y-10">
 
         <div>
             <h2 class="text-2xl font-bold">
-                <a href="index.php">🐾 Peludos <span class="text-primary">Unipê</span></a>
+                <a href="index.php">🐾 Peludos <span class="text-secondary">Unipê</span></a>
             </h2>
             <p class="text-sm opacity-70 mt-1">Salvando vidas, uma patinha de cada vez.</p>
         </div>
@@ -44,7 +44,7 @@
                         2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 
                         3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 
                         3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 
-                        2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 
+                        2a3 3 0 110 6 3 3 3 0 010-6zm4.5-.75a1.25 1.25 
                         0 11-2.5 0 1.25 1.25 0 012.5 0z"/>
                     </svg>
 
@@ -54,15 +54,13 @@
 
         </div>
 
-<div class="text-sm pt-4 border-t border-white/20">
-    <span class="opacity-70">© 2025 Peludos Unipê — Desenvolvido por</span>
-    <strong class="text-orange-400 font-semibold"> Layssa Evellyn </strong>
-    <span class="opacity-70">&</span>
-    <strong class="text-orange-400 font-semibold"> Tainara David</strong>
-</div>
+        <div class="text-sm pt-4 border-t border-white/20">
+            <span class="opacity-70">© 2025 Peludos Unipê — Desenvolvido por</span>
+            <strong class="text-secondary font-semibold"> Layssa Evellyn </strong>
+            <span class="opacity-70">&</span>
+            <strong class="text-secondary font-semibold"> Tainara David</strong>
+        </div>
 
     </div>
 
 </footer>
-
-<script src="../assets/js/patinhas.js"></script>

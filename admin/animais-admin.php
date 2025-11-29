@@ -30,9 +30,11 @@ function primeira_foto($pdo, $id){
     <h2>Animais Cadastrados</h2>
 
     <div class="admin-actions">
-        <a class="btn" href="animais-cadastro-form.php">Adicionar Novo</a>
-        <a class="btn" href="logout.php">Sair</a>
-    </div>
+    <a class="btn" href="animais-cadastro-form.php">Adicionar Novo</a>
+    <a class="btn" href="formularios_adocao.php">Formulários Contato/Adoção</a>
+    <a class="btn" href="logout.php">Sair</a>
+</div>
+
 
     <table>
         <thead>

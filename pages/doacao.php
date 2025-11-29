@@ -10,31 +10,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0..200" rel="stylesheet"/>
 
-<script>
+<script id="tailwind-config">
     tailwind.config = {
         darkMode: "class",
         theme: {
             extend: {
                 colors: {
-                    'primary': "#2563EB",        // azul vibrante moderno
-                    'secondary': "#F97316",      // laranja destaque
-                    'accent': "#FFEAD2",         // bege elegante
+                    primary: {
+                        DEFAULT: "#2563EB",    
+                        light: "#93C5FD",      
+                    },
+                    secondary: "#F97316",      
+                    accent: "#FFEAD2",
 
-                    'background-light': "#F9FAFB",
-                    'background-dark': "#111827",
-                    'text-light': "#F8FAFC",
-                    'text-dark': "#1F2937",
+                    /* Base */
+                    "background-light": "#F9FAFB",
+                    "background-dark": "#111827",
 
-                    'footer-blue': "#163A67"     // cor exata do rodapé
+                    "text-dark": "#1F2937",
+                    "text-light": "#F8FAFC",
+
+                    "subtext-light": "#6B7280",
+                    "subtext-dark": "#9CA3AF",
+
+                    /* Cor oficial do rodapé */
+                    "footer-blue": "#163A67",
                 },
+
                 fontFamily: {
-                    display: ["Plus Jakarta Sans", "sans-serif"]
+                    display: ["Manrope", "sans-serif"]
                 },
+
                 borderRadius: {
                     DEFAULT: "0.5rem",
                     lg: "1rem",
                     xl: "1.5rem",
                     full: "9999px"
+                },
+
+                boxShadow: {
+                    "roxinho": "0 0 18px 0 rgba(37, 99, 235, 0.45)"
                 }
             }
         }
@@ -72,9 +87,11 @@
                 Sua doação transforma a vida de um animal necessitado. Juntos, podemos oferecer cuidado, amor e um final feliz.
             </h2>
         </div>
-        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-secondary text-white text-base font-bold shadow-lg hover:bg-secondary/90 transition-colors duration-300">
-            <span class="truncate">Quero ajudar agora</span>
-        </button>
+       <a href="https://instagram.com/peludosunipe" target="_blank"
+   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-secondary text-white text-base font-bold shadow-lg hover:bg-secondary/90 transition-colors duration-300">
+    <span class="truncate">Quero ajudar agora</span>
+</a>
+
     </div>
 </div>
 </section>
@@ -124,9 +141,12 @@
             Ração, cobertores e medicamentos são essenciais.
         </p>
 
-        <button class="mt-auto w-full h-10 rounded-lg bg-primary text-white text-sm font-bold hover:bg-secondary transition-colors duration-300">
-            Agendar entrega
-        </button>
+ <a href="index.php#contato"
+   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-secondary text-white text-base font-bold shadow-lg hover:bg-secondary/90 transition-colors duration-300">
+    <span class="truncate">Agendar entrega</span>
+</a>
+
+
     </div>
 
     <!-- CARD 3 -->
@@ -140,10 +160,11 @@
             Seja voluntário, proponha parceria ou adote com responsabilidade.
         </p>
 
-        <button class="mt-auto w-full h-10 rounded-lg bg-primary text-white text-sm font-bold hover:bg-secondary transition-colors duration-300">
-            Ver formulário
-        </button>
-    </div>
+        <a href="index.php#contato"
+   class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-secondary text-white text-base font-bold shadow-lg hover:bg-secondary/90 transition-colors duration-300">
+    <span class="truncate">Ver formulário</span>
+</a>
+
 
 </div>
 

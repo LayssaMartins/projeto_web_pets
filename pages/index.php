@@ -17,29 +17,46 @@ include '../admin/config.inc.php'; // Conexão com o banco
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 
-<script>
+<script id="tailwind-config">
     tailwind.config = {
         darkMode: "class",
         theme: {
             extend: {
                 colors: {
-                    'primary': "#1E4D8B",       // azul médio moderno
-                    'secondary': "#FF8A3D",     // laranja suave
-                    'accent': "#FFE3C7",        // bege quentinho
+                    primary: {
+                        DEFAULT: "#2563EB",    
+                        light: "#93C5FD",      
+                    },
+                    secondary: "#F97316",      
+                    accent: "#FFEAD2",
 
-                    'background-light': "#F7F9FC",
-                    'background-dark': "#0F1A2B",
-                    'text-light': "#ffffff",
-                    'text-dark': "#333333",
+                    /* Base */
+                    "background-light": "#F9FAFB",
+                    "background-dark": "#111827",
+
+                    "text-dark": "#1F2937",
+                    "text-light": "#F8FAFC",
+
+                    "subtext-light": "#6B7280",
+                    "subtext-dark": "#9CA3AF",
+
+                    /* Cor oficial do rodapé */
+                    "footer-blue": "#163A67",
                 },
+
                 fontFamily: {
-                    display: ["Plus Jakarta Sans", "sans-serif"]
+                    display: ["Manrope", "sans-serif"]
                 },
+
                 borderRadius: {
                     DEFAULT: "0.5rem",
                     lg: "1rem",
                     xl: "1.5rem",
                     full: "9999px"
+                },
+
+                boxShadow: {
+                    "roxinho": "0 0 18px 0 rgba(37, 99, 235, 0.45)"
                 }
             }
         }
@@ -195,67 +212,68 @@ if (isset($_GET['status'])): ?>
 
 </div>
 
-   <section class="w-full py-20 bg-primary">
-    <div class="max-w-5xl mx-auto px-6 text-center">
+   <section class="w-full py-20 bg-footer-blue">
+  <div class="max-w-5xl mx-auto px-6 text-center">
 
-```
     <h3 class="text-3xl font-extrabold text-white mb-12">
-        Como Funciona a Adoção?
+      Como Funciona a Adoção?
     </h3>
 
     <div class="grid md:grid-cols-3 gap-12">
 
-        <div class="flex flex-col items-center">
-            <div class="w-16 h-16 flex items-center justify-center
-                        bg-white
-                        text-primary
-                        rounded-full
-                        text-2xl font-extrabold mb-4 shadow-xl">
-                1
-            </div>
-            <h4 class="text-xl font-semibold text-white mb-2">
-                Escolha seu Pet
-            </h4>
-            <p class="text-white/80">
-                Navegue pelos perfis dos nossos peludos e se apaixone.
-            </p>
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center
+                    bg-white
+                    text-footer-blue
+                    rounded-full
+                    text-2xl font-extrabold mb-4 shadow-xl">
+          1
         </div>
+        <h4 class="text-xl font-semibold text-white mb-2">
+          Escolha seu Pet
+        </h4>
+        <p class="text-white/80">
+          Navegue pelos perfis dos nossos peludos e se apaixone.
+        </p>
+      </div>
 
-        <div class="flex flex-col items-center">
-            <div class="w-16 h-16 flex items-center justify-center
-                        bg-white
-                        text-primary
-                        rounded-full
-                        text-2xl font-extrabold mb-4 shadow-xl">
-                2
-            </div>
-            <h4 class="text-xl font-semibold text-white mb-2">
-                Fale Conosco
-            </h4>
-            <p class="text-white/80">
-                Conte sobre você, sua rotina e o pet escolhido.
-            </p>
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center
+                    bg-white
+                    text-footer-blue
+                    rounded-full
+                    text-2xl font-extrabold mb-4 shadow-xl">
+          2
         </div>
+        <h4 class="text-xl font-semibold text-white mb-2">
+          Fale Conosco
+        </h4>
+        <p class="text-white/80">
+          Conte sobre você, sua rotina e o pet escolhido.
+        </p>
+      </div>
 
-        <div class="flex flex-col items-center">
-            <div class="w-16 h-16 flex items-center justify-center
-                        bg-white
-                        text-primary
-                        rounded-full
-                        text-2xl font-extrabold mb-4 shadow-xl">
-                3
-            </div>
-            <h4 class="text-xl font-semibold text-white mb-2">
-                Leve para Casa
-            </h4>
-            <p class="text-white/80">
-                Após a aprovação, receba seu novo melhor amigo!
-            </p>
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 flex items-center justify-center
+                    bg-white
+                    text-footer-blue
+                    rounded-full
+                    text-2xl font-extrabold mb-4 shadow-xl">
+          3
         </div>
+        <h4 class="text-xl font-semibold text-white mb-2">
+          Leve para Casa
+        </h4>
+        <p class="text-white/80">
+          Após a aprovação, receba seu novo melhor amigo!
+        </p>
+      </div>
 
     </div>
-</div>
+
+  </div>
 </section>
+
 
     <section class="py-12 md:py-20 " id="adocao">
     <div class="text-center mb-12">
