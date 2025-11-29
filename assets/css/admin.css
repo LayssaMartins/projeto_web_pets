@@ -14,7 +14,7 @@ body {
     padding: 1rem;
 }
 
-/* Tabela de animais */
+/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -26,7 +26,7 @@ table {
 }
 
 thead {
-    background-color: #7CBFD6;
+    background-color: #0B4F6C; /* Azul escuro do público */
     color: #fff;
 }
 
@@ -41,7 +41,7 @@ tbody td {
 }
 
 tbody tr:hover {
-    background-color: #f0f8ff;
+    background-color: #fff7ef; /* Laranja MUITO clarinho */
 }
 
 /* Botões */
@@ -49,7 +49,7 @@ button, .btn {
     display: inline-block;
     padding: 8px 16px;
     margin: 2px 0;
-    background-color: #7CBFD6;
+    background-color: #F4A259; /* Laranja suave */
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -59,10 +59,10 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-    background-color: #2F6C86;
+    background-color: #E1873A; /* Laranja mais escuro porém suave */
 }
 
-/* Formulário admin */
+/* Formulário */
 form {
     background-color: #fff;
     padding: 2rem;
@@ -105,7 +105,7 @@ form textarea {
     object-fit: cover;
 }
 
-/* Mensagens */
+/* Alertas */
 .alert {
     padding: 10px 15px;
     margin-bottom: 1rem;
@@ -121,6 +121,7 @@ form textarea {
     background-color: #FF7D63;
     color: #fff;
 }
+
 .admin-actions {
-    margin-bottom: 1.5rem; /* ajusta a distância entre os links e a tabela */
+    margin-bottom: 1.5rem;
 }
