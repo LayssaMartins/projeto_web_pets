@@ -378,3 +378,38 @@ footer {
     object-fit: cover;
     border-radius: 1rem; /* ou 15px, como preferir */
 }
+
+/* ======================= */
+/* ===============================
+   RESPONSIVIDADE (Mobile: abaixo de 768px)
+   =============================== */
+@media (max-width: 768px) {
+    
+    /* MOSTRA o ícone hambúrguer (garantindo que ele apareça na direita) */
+    .hamburger {
+        display: flex; 
+        margin-right: 10px; 
+    }
+    
+    /* ESCONDE o menu de links POR PADRÃO no mobile */
+    .menu {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        
+        /* Ajuste Crucial: Define a posição absoluta em relação ao início da página */
+        top: 60px; /* Altere este valor para a altura exata do seu header */
+        
+        right: 0; 
+        background: #1E4D8B;
+        width: 200px;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+    }
+    
+    /* MOSTRA o menu QUANDO a classe 'show' é ativada pelo JS */
+    .menu.show {
+        display: flex; 
+    }
+}
