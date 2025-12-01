@@ -1,0 +1,61 @@
+# 🐾 Projeto Web Pets -- Sistema de Adoção de Animais
+
+Um sistema web desenvolvido para gerenciar animais para adoção,
+formular os pedidos, e administrar cadastros por meio de um
+painel administrativo.\
+O projeto foi construído utilizando PHP, HTML/CSS, MySQL e
+upload de imagens, permitindo um fluxo completo de cadastro, edição
+e gerenciamento dos pets.
+
+## 📌 Funcionalidades Principais
+
+### 🐶 Área Pública
+
+-   Exibição de animais disponíveis para adoção\
+-   Exibição de detalhes de cada pet\
+-   Formulário para interessados solicitarem adoção
+
+### 🔐 Área Administrativa
+
+-   Cadastro, edição e exclusão de animais\
+-   Upload e gerenciamento de fotos\
+-   Visualização e gerenciamento de formulários de adoção\
+-   Login e proteção de páginas por sessão
+
+## 🗂️ Estrutura do Projeto
+
+    projeto_web_pets-main/
+    │
+    ├── admin/
+    ├── css/
+    ├── img/
+    ├── js/
+    ├── uploads/
+    ├── tabelas_adocao.sql
+    ├── index.php
+    └── README.md
+
+## 🛠️ Tecnologias Utilizadas
+
+-   PHP\
+-   HTML/CSS\
+-   MySQL\
+-   JavaScript
+
+## 📦 Instalação
+
+1.  Importar `tabelas_adocao.sql` no MySQL\
+2.  Configurar `/admin/config.inc.php`\
+3.  Executar o projeto via localhost
+
+## 👤 Acesso à Administração
+
+`/admin/index.php`
+
+Usuário padrão:
+
+    admin / admin
+
+## 📖 Licença
+
+Projeto de uso livre para estudos.
