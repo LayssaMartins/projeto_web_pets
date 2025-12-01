@@ -39,12 +39,12 @@ e gerenciamento dos pets.
 
 -   PHP\
 -   HTML/CSS\
--   phpMyAdmin\
+-   phpMyAdmin\MySQL
 -   JavaScript
 
 ## 📦 Instalação
 
-1.  Importar `tabelas_adocao.sql` no phpMyAdmin\
+1.  Importar `tabelas_adocao.sql` no phpMyAdmin\MySQL
 2.  Configurar `/admin/config.inc.php`\
 3.  Executar o projeto via localhost
 
@@ -70,6 +70,7 @@ Projeto de uso livre para estudos.
 ![img5](assets/img/img5.png)
 ![img6](assets/img/img6.png)
 ![img7](assets/img/img7.png)
+
 
 
 
