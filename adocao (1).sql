@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/11/2025 às 01:02
+-- Tempo de geração: 01/12/2025 às 22:37
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -96,15 +96,6 @@ CREATE TABLE `candidatos_adocao` (
   `id_animal` int(11) DEFAULT NULL,
   `data_envio` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `candidatos_adocao`
---
-
-INSERT INTO `candidatos_adocao` (`id`, `nome`, `email`, `assunto`, `mensagem`, `id_animal`, `data_envio`) VALUES
-(9, 'layssamartins', 'Lalaelanalayssamartins12@gmail.com', 'Adotar olive', 'quero afdotar', NULL, '2025-11-29 12:33:20'),
-(10, 'Tainara', 'tainara@gmail.com', 'Quero o Tom', 'quero adotar', NULL, '2025-11-29 19:28:30'),
-(11, 'Layssa ', 'layssamartins12@gmail.com', 'Adotar a Kiara', 'Estou disposta a adotar essa gatinha', NULL, '2025-11-29 20:03:45');
 
 --
 -- Índices para tabelas despejadas
