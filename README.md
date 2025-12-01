@@ -1,13 +1,23 @@
 # 🐾 Projeto Web Pets -- Sistema de Adoção de Animais
 
-Um sistema web desenvolvido para gerenciar animais para adoção,
-formular os pedidos, e administrar cadastros por meio de um
-painel administrativo.\
-O projeto foi construído utilizando PHP, HTML/CSS, MySQL e
-upload de imagens, permitindo um fluxo completo de cadastro, edição
-e gerenciamento dos pets.
+Desenvolvido na por **Layssa Evellyn** e **Tainara David**
 
-## 📌 Funcionalidades Principais
+## 🎯 Objetivo do Projeto
+
+O **Projeto Web Pets** consiste na criação de um sistema web para facilitar a adoção de animais abandonados ou resgatados no **Centro Universitário de João Pessoa (UNIPÊ)**.
+
+A ideia surgiu a partir do perfil **@peludosunipe** no Instagram, que realiza um trabalho incrível na divulgação desses animais.  
+O objetivo foi **expandir essa ação para uma plataforma web**, permitindo que qualquer pessoa tenha acesso às informações dos pets e possa demonstrar interesse em adotá-los.
+
+### 📌 Funcionalidades Principais
+
+- **CRUD de animais:** cadastrar, editar, excluir e listar pets.  
+- **Campos do cadastro:** nome, idade, tipo (gato, cachorro, etc.), descrição e foto.  
+- **Página pública:** exibe todos os animais cadastrados, com botão **“Quero adotar”**.  
+- **Área administrativa:** gerenciamento completo dos pets e das solicitações de adoção.  
+- **Banco de dados:** integração com **phpMyAdmin/MySQL**.  
+- **Sistema totalmente responsivo:** funciona perfeitamente em celulares, tablets e desktops.  
+- **Tecnologias utilizadas:** PHP, HTML, CSS, JavaScript, XAMPP e MySQL/phpMyAdmin.
 
 ### 🐶 Área Pública
 
@@ -35,22 +45,17 @@ e gerenciamento dos pets.
     ├── index.php
     └── README.md
 
-## 🛠️ Tecnologias Utilizadas
-
--   PHP\
--   HTML/CSS\
--   phpMyAdmin\MySQL
--   JavaScript
 
 ## 📦 Instalação
 
-1.  Importar `tabelas_adocao.sql` no phpMyAdmin\MySQL
-2.  Configurar `/admin/config.inc.php`\
-3.  Executar o projeto via localhost
+1.  Clonar o repositório, importar `tabelas_adocao.sql` no phpMyAdmin\MySQL
+2.  Configurar o ambiente XAMPP
+3.  Executar o projeto via localhost `http://localhost/projeto_web_pets/pages/index.php`
+   
 
 ## 👤 Acesso à Administração
 
-`/admin/index.php`
+`http://localhost/projeto_web_pets/admin/login.php`
 
 Usuário padrão:
 
@@ -70,6 +75,7 @@ Projeto de uso livre para estudos.
 ![img5](assets/img/img5.png)
 ![img6](assets/img/img6.png)
 ![img7](assets/img/img7.png)
+
 
 
 
