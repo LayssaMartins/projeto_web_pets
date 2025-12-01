@@ -60,8 +60,16 @@ Usuário padrão:
 
 Projeto de uso livre para estudos.
 
-## 📷 Foto do projeto
+## 📷 Fotos do projeto
 ![admin1](assets/img/admin1.png)
+![admin2](assets/img/admin2.png)
+![img1](assets/img/img1.png)
+![img2](assets/img/img2.png)
+![img3](assets/img/img3.png)
+![img4](assets/img/img4.png)
+![img5](assets/img/img5.png)
+![img6](assets/img/img6.png)
+![img7](assets/img/img7.png)
 
 
 
